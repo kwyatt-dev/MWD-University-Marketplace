@@ -1,8 +1,9 @@
 import React from "react";
-import MainModule from "./Main/Main.js";
-
+import ProductListingsModule from "./ProductListings/ProductListings.js";
+import UsersModule from "./Users/Users.js";
 const Components = () => {
-  return <MainModule />;
+  // return <ProductListingsModule />;
+  return <UsersModule />;
 };
 
 export default Components;
