@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getAllProductListings } from "../../Services/ProductListingService.js";
+import {getAllProductListings} from "../../Services/ProductListingService.js";
+import ProductListingsListItem from "./ProductListingsListItem.js";
 
 var postCheck = false;
 
-const MainList = () => {
+const ProductListingsList = () => {
   const [productListings, setListings] = useState([]);
 
   if (!postCheck) {
@@ -15,7 +16,6 @@ const MainList = () => {
     getAllProductListings().then((productListings) => {
       setListings(productListings);
     });
-    console.log(productListings);
   }, []);
 
   return (
@@ -23,10 +23,16 @@ const MainList = () => {
       This is the main list component.
       {productListings.length > 0 && (
         <ul>
+          {/* Passing listing info as props */}
           {productListings.map((productListing) => (
             <li key={productListing.attributes.SellerEmail}>
-              {productListing.attributes.SellerName},{" "}
-              {productListing.attributes.ProductName}
+              {<ProductListingsListItem 
+              objectId={productListing.id}
+              productName={productListing.attributes.ProductName}
+              sellerName={productListing.attributes.SellerName}
+              sellerEmail={productListing.attributes.SellerEmail}
+              price={productListing.attributes.Price}
+              />}
             </li>
           ))}
         </ul>
@@ -36,4 +42,4 @@ const MainList = () => {
   );
 };
 
-export default MainList;
+export default ProductListingsList;

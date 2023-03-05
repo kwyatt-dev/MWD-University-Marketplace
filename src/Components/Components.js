@@ -1,6 +1,6 @@
 import React from "react";
-import MainModule from "./Main/Main.js";
-import Users from "./Users/Users.js";
+import ProductListingsModule from "./ProductListings/ProductListings.js";
+import UsersModule from "./Users/Users.js";
 import Footer from "./Footer/Footer";
 import {
   BrowserRouter as Router,
@@ -14,7 +14,7 @@ export default function Components() {
     <Router>
       <Routes>
         <Route path='/' exact element={<MainModule />} />
-        <Route path='/users' element={<Users />} />
+        <Route path='/users' element={<UsersModule />} />
       </Routes>
       <Footer />
     </Router>
