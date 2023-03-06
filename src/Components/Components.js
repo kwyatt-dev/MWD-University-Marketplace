@@ -13,7 +13,7 @@ export default function Components() {
   return (
     <Router>
       <Routes>
-        <Route path='/' exact element={<MainModule />} />
+        <Route path='/' exact element={<ProductListingsModule />} />
         <Route path='/users' element={<UsersModule />} />
       </Routes>
       <Footer />
