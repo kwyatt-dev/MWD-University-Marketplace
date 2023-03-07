@@ -20,7 +20,6 @@ const ProductListingsList = () => {
 
   return (
     <div>
-      This is the main list component.
       {productListings.length > 0 && (
         <ul>
           {/* Passing listing info as props */}
@@ -29,8 +28,9 @@ const ProductListingsList = () => {
               {<ProductListingsListItem 
               objectId={productListing.id}
               productName={productListing.attributes.ProductName}
-              sellerName={productListing.attributes.SellerName}
               sellerEmail={productListing.attributes.SellerEmail}
+              sellerName={productListing.attributes.SellerName}
+              user={productListing.attributes.User}
               price={productListing.attributes.Price}
               />}
             </li>
