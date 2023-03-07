@@ -1,51 +1,38 @@
 
 # Change Log
 All notable changes to this project will be documented in this file.
- 
-The format is based on [Keep a Changelog](http://keepachangelog.com/)
-and this project adheres to [Semantic Versioning](http://semver.org/).
- 
-## [Unreleased] - yyyy-mm-dd
- 
-Here we write upgrading notes for brands. It's a team effort to make them as
-straightforward as possible.
+
+## [0.0.0] - 03-04-2023
  
 ### Added
-- [PROJECTNAME-XXXX](http://tickets.projectname.com/browse/PROJECTNAME-XXXX)
-  MINOR Ticket title goes here.
-- [PROJECTNAME-YYYY](http://tickets.projectname.com/browse/PROJECTNAME-YYYY)
-  PATCH Ticket title goes here.
+- [MWD-University-Marketplace] Initial Import
+  Feature 4 Kickoff imported from CodeSandbox to Github. Includes 1 Parse Model.
  
 ### Changed
  
 ### Fixed
  
-## [1.2.4] - 2017-03-15
-  
-Here we would have the update steps for 1.2.4 for people to follow.
+## [0.1.0] - 03-04-2023
  
 ### Added
  
 ### Changed
-  
-- [PROJECTNAME-ZZZZ](http://tickets.projectname.com/browse/PROJECTNAME-ZZZZ)
-  PATCH Drupal.org is now used for composer.
+  - [MWD-University-Marketplace] Routing Added
+    A second page/component was made and routing has been added between them.
  
 ### Fixed
  
-- [PROJECTNAME-TTTT](http://tickets.projectname.com/browse/PROJECTNAME-TTTT)
-  PATCH Add logic to runsheet teaser delete to delete corresponding
-  schedule cards.
- 
-## [1.2.3] - 2017-03-14
+## [0.2.0] - 03-07-2023
  
 ### Added
+  - [MWD-University-Marketplace] Parse Model Added
+    A second Parse Model was added and connected to the front end to display and allow deletiong of products on one page/component and display of users on the other page/component.
+  - [General Upkeep] Diagrams Added
+    Component and UML Diagrams added.
    
 ### Changed
  
 ### Fixed
- 
-- [PROJECTNAME-UUUU](http://tickets.projectname.com/browse/PROJECTNAME-UUUU)
-  MINOR Fix module foo tests
-- [PROJECTNAME-RRRR](http://tickets.projectname.com/browse/PROJECTNAME-RRRR)
-  MAJOR Module foo's timeline uses the browser timezone for date resolution 
+  - [MWD-University-Marketplace] Parse Models Completed
+    Database was changed to properly account for one-to-many linking between classes.
+
