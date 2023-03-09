@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import {deleteProductListing} from "../../Services/ProductListingService.js";
 import { getUser } from "../../Services/UserService.js";
+
+
 export default function ProductListingsListItem(props){
 
     // Display props: 
@@ -9,26 +11,45 @@ export default function ProductListingsListItem(props){
         deleteProductListing(props.objectId);
     }
 
+    
+
     // getUser usage
     const [user, setUser] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+
+    //useEffect(() => {
+        // TODO: get user by ID   
+        //if (props.user.id) {
+        //    getUser("wXpvn9DHoR").then((user) => {
+          //      setUser(user);
+      //          console.log("User Attr: ", user.attributes);
+    //            console.log("User Name: ", user.attributes.username);
+  //          });
+        //}
+//}, []);
 
     useEffect(() => {
-        // TODO: get user by ID   
-        if (props.user.id) {
-            getUser(props.user.id).then((user) => {
-                setUser(user);
-                console.log(user.attributes);
-            });
-        }
-}, []);
+        getUser("wXpvn9DHoR").then((user) => {
+            setUser(user);
+            console.log("User Attr: ", user.attributes);
+            console.log("User Name: ", user.attributes.username); // <- interesting that this works but line 39 breaks
+            setIsLoading(false);
+        });
+    }, []);
+
     return (
         <div>
-            {/* TODO: fix this in F5 */}
-            {user.length > 0 && user.attributes.username} 
-            Seller: {props.sellerName} ({props.sellerEmail})
-            <br></br>
-            Product: {props.productName} - ${props.price}
-            &nbsp;<button onClick={deleteListing}>Delete this listing</button>
+            {!isLoading && (
+                <div>
+                    User Testing: {user.attributes.username}
+                    Seller: {props.sellerName} ({props.sellerEmail})
+                    <br></br>
+                    Product: {props.productName} - ${props.price}
+                    &nbsp;<button onClick={deleteListing}>Delete this listing</button>
+                </div>
+            )}
+            
         </div>
     )
 }
