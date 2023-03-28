@@ -45,6 +45,11 @@ export async function loginUser(currUser){
     });
 }
 
+// Checking User
+export async function checkUser() {
+  return Parse.User.current()?.authenticated;
+}
+
 // Read
 export async function getAllUsers(){
     const User = Parse.Object.extend("User");
