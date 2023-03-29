@@ -4,6 +4,52 @@ import Parse from "parse/dist/parse.min.js";
 // const url =
 //   "https://my-json-server.typicode.com/kellybuchanan/WebDev-Spring2021";
 
+// Creating New User
+export async function createUser(newUser){
+  const user = new Parse.User();
+
+  user.set("username", newUser.email);
+  user.set("firstName", newUser.firstName);
+  user.set("lastName", newUser.lastName);
+  user.set("password", newUser.password);
+  user.set("email", newUser.email);
+
+  console.log("User: ", user);
+
+  return user
+    .signUp()
+    .then((newUserSaved) => {
+      return newUserSaved;
+    })
+    .catch((error) => {
+      alert(`Error: ${error.message}`);
+    });
+}
+
+// Logging In User
+export async function loginUser(currUser){
+  const user = new Parse.User();
+
+  user.set("password", currUser.password);
+  user.set("username", currUser.email);
+
+  console.log("User: ", user);
+  console.log();
+  return user
+    .logIn(user.email, user.password)
+    .then((currUserSaved) => {
+      return currUserSaved;
+    })
+    .catch((error) => {
+      alert(`Error: ${error.message}`);
+    });
+}
+
+// Checking User
+export async function checkUser() {
+  return Parse.User.current()?.authenticated;
+}
+
 // Read
 export async function getAllUsers(){
     const User = Parse.Object.extend("User");

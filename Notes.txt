@@ -10,10 +10,6 @@ Katelyn
 CreateUser
 CheckUser
 
-To see logged in user info:
-Inspect --> ">>" --> Application --> Local Storage --> Select only child
-
-
 Feature 6:
 User List Admin Page - double protected as admin only
 Profile Page - protected as user only
