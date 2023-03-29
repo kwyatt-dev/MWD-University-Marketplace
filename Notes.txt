@@ -10,7 +10,6 @@ Katelyn
 CreateUser
 CheckUser
 
-
 Feature 6:
 User List Admin Page - double protected as admin only
 Profile Page - protected as user only
