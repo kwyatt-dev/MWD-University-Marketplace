@@ -1,0 +1,19 @@
+Feature 5 Goals:
+Luna
+Home Page - unprotected
+Login Page - unprotected
+Register Page - unprotected
+Marketplace Main Page - protected
+Create Listing - protected
+
+Katelyn
+CreateUser
+CheckUser
+
+
+Feature 6:
+User List Admin Page - double protected as admin only
+Profile Page - protected as user only
+More Sub Pages for Marketplace (maybe) - protected
+
+Log Out Button
