@@ -16,7 +16,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
                             value={user.firstName}
                             onChange={onChange}
                             name="firstName"
-                            placeholder="first name"
+                            placeholder="Enter first name..."
                             required
                         />
                     </div>
@@ -30,6 +30,21 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
                             value={user.lastName}
                             onChange={onChange}
                             name="lastName"
+                            placeholder="Enter last name..."
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label>Dorm</label>
+                        <br />
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="dorm-input"
+                            value={user.dorm}
+                            onChange={onChange}
+                            name="dorm"
+                            placeholder="Enter dorm name..."
                             required
                         />
                     </div>{" "}
@@ -45,6 +60,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
                         value={user.email}
                         onChange={onChange}
                         name="email"
+                        placeholder="Enter email..."
                         required
                     />
                 </div>{" "}
@@ -58,6 +74,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
                         value={user.password}
                         onChange={onChange}
                         name="password"
+                        placeholder="Enter password..."
                         min="0"
                         required
                     />

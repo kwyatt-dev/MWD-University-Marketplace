@@ -29,7 +29,8 @@ const UsersList = () => {
             <li key={user.attributes.username}>
               {<UsersListItem 
               objectId={user.id}
-              username={user.attributes.username}
+              firstName={user.attributes.firstName}
+              lastName={user.attributes.lastName}
               dorm={user.attributes.Dorm}
               />}
             </li>
