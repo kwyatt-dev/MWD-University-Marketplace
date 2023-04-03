@@ -36,3 +36,14 @@ All notable changes to this project will be documented in this file.
   - [MWD-University-Marketplace] Parse Models Completed<br />
     Database and Models changed to properly account for one-to-many linking between classes.
 
+## [0.3.0] - 04-03-2023
+ 
+### Added
+  - [MWD-University-Marketplace] Authentication Services and Components Added<br />
+    Authentication services are added to support login and registration.
+   
+### Changed
+ 
+### Fixed
+  - [MWD-University-Marketplace] Authentication Services and Protected Routes Completed<br />
+    Protected Routes are added to prevent users from accessing protected routes in different scenarios. 
