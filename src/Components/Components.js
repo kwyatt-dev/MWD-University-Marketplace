@@ -3,7 +3,7 @@ import Home from "./Home";
 import AuthLogin from "./Auth/AuthLogin";
 import AuthRegister from "./Auth/AuthRegister";
 import ProductListingsModule from "./ProductListings/ProductListings.js";
-import ProtectedRoute from "./ProtectedRoute/ProtectedRoute.js";
+import {ProtectedRoute, ProtectedAuthRoute} from "./ProtectedRoute/ProtectedRoute.js";
 import UsersModule from "./Users/Users.js";
 import Footer from "./Footer/Footer";
 import {
@@ -17,7 +17,7 @@ export default function Components() {
   return (
     <Router>
       <Routes>
-        <Route path="/auth" exact element={<Home />} />
+        {/* <Route path="/auth" exact element={<Home />} /> */}
         {/* <Route path='/' exact element={<ProductListingsModule />} /> */}
         <Route path= "/users" element={<UsersModule />} />
         <Route path="/auth/register" element={<AuthRegister />} />
@@ -26,7 +26,11 @@ export default function Components() {
           path="/"
           element={<ProtectedRoute path="/" element={ProductListingsModule} />}
         />
-        <Route path="*" element={<Navigate to="/auth" replace />} />
+        <Route
+          path="/auth"
+          element={<ProtectedAuthRoute path="/" element={<Home />} />}
+        />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
     </Router>
