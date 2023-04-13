@@ -5,6 +5,7 @@ import AuthRegister from "./Auth/AuthRegister";
 import ProductListingsModule from "./ProductListings/ProductListings.js";
 import {ProtectedRoute, ProtectedAuthRoute} from "./ProtectedRoute/ProtectedRoute.js";
 import UsersModule from "./Users/Users.js";
+import ProfileMain from "./Profile/ProfileMain";
 import Footer from "./Footer/Footer";
 import {
   BrowserRouter as Router,
@@ -29,6 +30,10 @@ export default function Components() {
         <Route
           path="/auth"
           element={<ProtectedAuthRoute path="/" element={<Home />} />}
+        />
+        <Route
+          path="/profile"
+          element={<ProtectedRoute path="/" element={ProfileMain} />}
         />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
