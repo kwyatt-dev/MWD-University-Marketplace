@@ -33,7 +33,7 @@ export default function ProductListingsListItem(props){
         getUser("wXpvn9DHoR").then((user) => {
             setUser(user);
             console.log("User Attr: ", user.attributes);
-            console.log("User Name: ", user.attributes.username); // <- interesting that this works but line 39 breaks
+            console.log("User Name: ", user.attributes.username);
             setIsLoading(false);
         });
     }, []);

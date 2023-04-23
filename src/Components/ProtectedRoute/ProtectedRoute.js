@@ -11,6 +11,8 @@ export const ProtectedRoute = ({ element: Component, ...rest }) => {
         navigate("/auth");
     };
     if (checkUser()) {
+        console.log("check user true");
+        console.log(rest.path);
         return <Component />;
     } else {
         return <Home />;

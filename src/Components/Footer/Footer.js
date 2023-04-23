@@ -13,6 +13,9 @@ const Footer = () => (
         <li>
           <Link to="/profile">Profile</Link>
         </li>
+        <li>
+          <Link to="/profile/awong2@nd.edu">Ava Profile</Link>
+        </li>
       </ul>
     </nav>
   </footer>
