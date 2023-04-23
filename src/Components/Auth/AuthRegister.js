@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { checkUser, createUser } from "./AuthService";
+import { checkUser, createUser, checkNd} from "./AuthService";
 import AuthForm from "./AuthForm";
 import { useNavigate } from "react-router-dom";
 
@@ -16,6 +16,8 @@ const AuthRegister = () => {
     // flags in the state to watch for add/remove updates
     const [add, setAdd] = useState(false);
 
+    const [changeEmail, setChangeEmail] = useState(true);
+
     // redirect already authenticated users back to home
     useEffect(() => {
         if (checkUser()) {
@@ -27,16 +29,16 @@ const AuthRegister = () => {
     // useEffect that run when changes are made to the state variable flags
     useEffect(() => {
         // checkUser() ? history.push("/home"): null;
-        if (newUser && add) {
-            createUser(newUser).then((userCreated) => {
-                if (userCreated) {
-                    alert(
-                        `${userCreated.get("firstName")}, you successfully registered!`
-                    );
-                    navigate("/");
-                }
+        if (newUser && add && !checkNd(newUser.email)) {
+            setAdd(false);
+        } else if (newUser && add && checkNd(newUser.email)) {
+            createUser(newUser).then(() => {
+                // console.log(userCreated);
+                navigate("/auth/login");
                 // TODO: redirect user to main app
                 setAdd(false);
+            }).catch((error) => {
+                alert(`Error: ${error.message}`);
             });
         }
     }, [navigate, newUser, add]);
@@ -58,6 +60,11 @@ const AuthRegister = () => {
         console.log("submitted: ", e.target);
         setAdd(true);
     };
+
+    const onChangeEmailHandler = (e) => {
+        e.preventDefault();
+        setChangeEmail(true);
+    }
 
     return (
         <div>

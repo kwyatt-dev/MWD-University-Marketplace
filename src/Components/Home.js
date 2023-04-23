@@ -32,7 +32,7 @@ export default function Home() {
                 <video autoPlay loop muted playsInline class="back-video">
                     <source src={ND} type="video/mp4"/>
                 </video>
-                <h1 class="title">Tri-campus Second-hand Marketplace</h1>
+                <h1 class="title">Tri-Campus Secondhand Marketplace</h1>
             </div>
 
         </div>

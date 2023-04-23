@@ -1,5 +1,4 @@
 import Parse from "parse/dist/parse.min.js";
-
 // used in auth register component
 export const createUser = (newUser) => {
     const user = new Parse.User();
@@ -14,6 +13,8 @@ export const createUser = (newUser) => {
     return user
         .signUp()
         .then((newUserSaved) => {
+            Parse.User.logOut();
+            alert(`${newUser.firstName}, you successfully registered! Please check your inbox to verify your e-mail and log in afterwards.`)
             return newUserSaved;
         })
         .catch((error) => {
@@ -33,7 +34,12 @@ export const loginUser = (currUser) => {
     return user
         .logIn(user.email, user.password)
         .then((currUserSaved) => {
-            return currUserSaved;
+            if (user.get('emailVerified')) {
+                return currUserSaved;
+            } else {
+                Parse.User.logOut();
+                alert(`${currUser.firstName}, please check your inbox to verify your e-mail and log in afterwards.`)
+            }
         })
         .catch((error) => {
             alert(`Error: ${error.message}`);
@@ -43,3 +49,14 @@ export const loginUser = (currUser) => {
 export const checkUser = () => {
     return Parse.User.current()?.authenticated;
 };
+
+// check for ND email
+export const checkNd = (email) => {
+    let re = /^[ ]*([^@\s]+)@nd.edu/;
+    if (!re.test(email)) {
+        alert(`Please use an ND email`);
+        return false;
+    } else {
+        return true;
+    }
+}

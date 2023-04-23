@@ -82,8 +82,12 @@ code {
   font-variant: normal; 
   font-weight: bold; 
   color: white;
+  transition: all 200ms;
 }
 
+.title:hover {
+  color: gold;
+}
 .content{
   text-align: center;
 }
