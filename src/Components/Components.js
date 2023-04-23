@@ -13,6 +13,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import EditListing from "./Profile/EditListing";
 
 export default function Components() {
   return (
@@ -34,6 +35,14 @@ export default function Components() {
         <Route
           path="/profile"
           element={<ProtectedRoute path="/" element={ProfileMain} />}
+        />
+        <Route
+          path="/profile/:email"
+          element={<ProtectedRoute path="/profile/:email" element={ProfileMain} />}
+        />
+        <Route
+          path="/editListing/:productID"
+          element={<ProtectedRoute path="/editListing/:productID" element={EditListing} />}
         />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

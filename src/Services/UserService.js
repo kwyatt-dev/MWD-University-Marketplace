@@ -6,6 +6,8 @@ import Parse from "parse/dist/parse.min.js";
 
 // Creating New User
 export async function createUser(newUser){
+
+  // TODO: When creating user, need to create profile too and link them
   const user = new Parse.User();
 
   user.set("username", newUser.email);
