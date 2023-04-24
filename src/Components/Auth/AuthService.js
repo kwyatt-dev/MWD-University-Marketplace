@@ -65,6 +65,7 @@ export const resetPassword = async (email) => {
     try {
         // Pass the username and password to logIn function
         let result = await Parse.User.requestPasswordReset(email);
+        console.log(result);
         // Password reset request was sent successfully
         console.log('Reset password email sent successfully');
     } catch (error) {
