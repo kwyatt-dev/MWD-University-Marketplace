@@ -47,3 +47,16 @@ All notable changes to this project will be documented in this file.
 ### Fixed
   - [MWD-University-Marketplace] Authentication Services and Protected Routes Completed<br />
     Protected Routes are added to prevent users from accessing protected routes in different scenarios. 
+    
+## [0.4.0] - 04-23-2023
+ 
+### Added
+  - [MWD-University-Marketplace] Profile Pages, Email Authentication(verification, check for domain name and Forgot Your Password functions), and Profile Product Listings Added<br />
+    
+   
+### Changed
+  - [MWD-University-Marketplace] CSS for Homepage Updated<br />
+ 
+### Fixed
+  - [MWD-University-Marketplace] Authentication Services and Protected Routes Completed<br />
+    Protected Routes are added to prevent users from accessing protected routes in different scenarios. 
