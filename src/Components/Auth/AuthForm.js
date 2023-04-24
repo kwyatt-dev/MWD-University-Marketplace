@@ -66,7 +66,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
                     <button type="submit" className="btn btn-primary" onSubmit={onSubmit}>
                         Submit
                     </button>
-                {!isLogin ? <div><Link to="/auth/login">Already have an account?</Link></div> : <div>Forgot your password?</div>}
+                {!isLogin ? <div><Link to="/auth/login">Already have an account?</Link></div> : <div><Link to={`/auth/reset/${user.email}`}>Forgot your password?</Link></div>}
                 </div>
             </div>
         </form>
