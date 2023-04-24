@@ -58,5 +58,4 @@ All notable changes to this project will be documented in this file.
   - [MWD-University-Marketplace] CSS for Homepage Updated<br />
  
 ### Fixed
-  - [MWD-University-Marketplace] Authentication Services and Protected Routes Completed<br />
-    Protected Routes are added to prevent users from accessing protected routes in different scenarios. 
+  - [MWD-University-Marketplace] Authentication Services and Protected Routes Updated<br /> 
