@@ -25,6 +25,7 @@ const ProductListingsList = () => {
         <div>
           <AutocompleteListings 
             currListings={productListings}/>
+            <hr></hr>
           <ul>
             {/* Passing listing info as props */}
             {productListings.map((productListing) => (
