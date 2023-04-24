@@ -25,7 +25,7 @@ export default function Components() {
         <Route path= "/users" element={<UsersModule />} />
         <Route path="/auth/register" element={<AuthRegister />} />
         <Route path="/auth/login" element={<AuthLogin />} />
-        <Route path="/auth/reset" element={<PasswordReset />} />
+        <Route path="/auth/reset/:email" element={<PasswordReset />} />
         <Route
           path="/"
           element={<ProtectedRoute path="/" element={ProductListingsModule} />}
