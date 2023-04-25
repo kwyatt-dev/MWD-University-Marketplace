@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: system-ui,-apple-system,system-ui,'"Helvetica Neue",Helvetica,Arial,sans-serif';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -141,4 +139,32 @@ footer {
 
 #footer-link:hover {
   color: darkblue;
+}
+
+.auth-title {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+}
+
+.form-group {
+  text-align: center;
+  font-family: system-ui,-apple-system,system-ui,'"Helvetica Neue",Helvetica,Arial,sans-serif';
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  display: inline-block;
+  justify-content: center;
+  width: 200px;
+}
+
+#auth-button {
+  font-family: system-ui,-apple-system,system-ui,'"Helvetica Neue",Helvetica,Arial,sans-serif';
+  font-size: 14px;
+  font-weight: 600;
+} 
+#auth-redirect {
+  font-size: 12px;
+  font-weight: 400;
 }
