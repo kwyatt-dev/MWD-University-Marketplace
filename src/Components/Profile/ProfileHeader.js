@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { getProfileByCurrentUser, getProfileByEmail } from "../../Services/ProfileUserService";
 import { useParams } from "react-router-dom";
+import profilePhoto from "./BlankProfilePhoto.png";
 
 
 // Profile's Header
 const ProfileHeader = (props) => {
   const [profileDetails, setDetails] = useState([]);
+  const [editFlag, setEditFlag] = useState(false);
 
   useEffect(() => {
       getProfileByEmail(props.email).then((details) => {
         setDetails(details);
-        console.log("Details console log: " + profileDetails[0].attributes.Picture);
       });
   }, [props.email]);
 
@@ -19,10 +20,15 @@ const ProfileHeader = (props) => {
     <div>
       {profileDetails.length > 0 && (
         <div>
-          <h2>{profileDetails[0].attributes.FirstName} {profileDetails[0].attributes.LastName}
-          {props.curUser && (
-                    <button>Edit</button>
-                  )}</h2>
+          <h2>
+            {props.curUser && !editFlag && (
+              <div>{profileDetails[0].attributes.FirstName} {profileDetails[0].attributes.LastName}</div>
+              
+            )}
+            {props.curUser && !editFlag && (
+              <button>Edit</button>
+            )}
+          </h2>
           Email: {profileDetails[0].attributes.Email}
           {props.curUser && (
                     <button>Edit</button>
@@ -31,7 +37,7 @@ const ProfileHeader = (props) => {
           {props.curUser && (
                     <button>Edit</button>
                   )} <br></br>
-          <img src="BlankProfilePhoto.png" height="300px" width="400px" alt="Photo Missing" />
+          <img src={profilePhoto} height="200px" width="200px" alt="Photo Missing" />
         </div>
       )}
     </div>
