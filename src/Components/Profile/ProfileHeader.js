@@ -21,7 +21,7 @@ const ProfileHeader = (props) => {
       {profileDetails.length > 0 && (
         <div>
           <h2>
-            {props.curUser && !editFlag && (
+            {!editFlag && (
               <div>{profileDetails[0].attributes.FirstName} {profileDetails[0].attributes.LastName}</div>
               
             )}
