@@ -25,7 +25,6 @@ const ProfileProducts = (props) => {
 
     // TODO: add Add Product Listing button
     const addListing = () => {
-      //addNewListing()
       navigate("/newListing");
     }
   

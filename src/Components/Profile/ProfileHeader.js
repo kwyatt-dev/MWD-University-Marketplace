@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getProfileByCurrentUser, getProfileByEmail } from "../../Services/ProfileUserService";
-import { useParams } from "react-router-dom";
 import profilePhoto from "./BlankProfilePhoto.png";
 
 
