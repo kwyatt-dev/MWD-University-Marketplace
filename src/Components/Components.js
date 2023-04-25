@@ -15,6 +15,7 @@ import {
   Routes
 } from "react-router-dom";
 import EditListing from "./Profile/EditListing";
+import AddNewListing from "./Profile/AddNewListing";
 
 export default function Components() {
   return (
@@ -45,6 +46,10 @@ export default function Components() {
         <Route
           path="/editListing/:productID"
           element={<ProtectedRoute path="/editListing/:productID" element={EditListing} />}
+        />
+        <Route
+          path="/newListing"
+          element={<ProtectedRoute path="/" element={AddNewListing} />}
         />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

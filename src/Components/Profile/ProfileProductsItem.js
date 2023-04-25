@@ -15,7 +15,6 @@ export default function ProductListingsListItem(props){
     }
 
     const editListing = () =>{
-        console.log("Edit Listing");
         navigate("/editListing/" + props.objectId);
     }
 
