@@ -25,14 +25,15 @@ const ProfileProducts = (props) => {
 
     // TODO: add Add Product Listing button
     const addListing = () => {
-      //addNewListing()
       navigate("/newListing");
     }
   
     return (
       <div>
         <div>
+        {props.curUser && (
           <button onClick={addListing}>Add New Listing</button>
+        )}
         </div>
         <div>
           {profileProducts.length > 0 && (

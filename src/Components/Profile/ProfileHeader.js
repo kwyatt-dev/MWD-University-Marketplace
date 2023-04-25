@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getProfileByCurrentUser, getProfileByEmail } from "../../Services/ProfileUserService";
-import { useParams } from "react-router-dom";
 import profilePhoto from "./BlankProfilePhoto.png";
 
 
@@ -21,7 +20,7 @@ const ProfileHeader = (props) => {
       {profileDetails.length > 0 && (
         <div>
           <h2>
-            {props.curUser && !editFlag && (
+            {!editFlag && (
               <div>{profileDetails[0].attributes.FirstName} {profileDetails[0].attributes.LastName}</div>
               
             )}
