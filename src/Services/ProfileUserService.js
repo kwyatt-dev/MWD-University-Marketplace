@@ -45,3 +45,43 @@ export async function getProfileByEmail(userEmail) {
     console.error("Error while fetching ProductListing", error);
   }
 }
+
+// Update Profile
+export async function updateCurrentProfile(email, firstName, lastName, dorm, paymentType) {
+  console.log("Inside updateCurrentProfile");
+
+  const Profile = Parse.Object.extend("Profile");
+  const queryProfile = new Parse.Query(Profile);
+  queryProfile.equalTo("Email", email);
+
+  try {
+    const results = await queryProfile.find();
+
+    try {
+      const query = new Parse.Query('Profile');
+      const object = await query.get(results[0].id);
+      object.set("FirstName", firstName);
+      object.set("LastName", lastName);
+      object.set("Dorm", dorm);
+      object.set("Payment", paymentType);
+
+      try {
+        const response = await object.save();
+      } catch (error) {
+        console.error('Error while updating profile v1', error);
+      }
+
+    } catch (error) {
+      console.error('Error while updating profile v2', error);
+    }
+    
+
+
+    
+    
+    
+
+  } catch (error) {
+    console.error('Error while updating profile v3', error);
+  }
+}

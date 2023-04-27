@@ -42,6 +42,49 @@ export async function getProductByID(objectId) {
   }
 }
 
+// Update Product By ID
+export async function updateProductByID(objectId, productName, productPrice) {
+  console.log("Inside updateProductByID");
+
+  const query = new Parse.Query('ProductListing');
+
+  try {
+    const object = await query.get(objectId);
+    object.set("ProductName", productName);
+    object.set("Price", Number(productPrice));
+    
+    try {
+      const response = await object.save();
+    } catch (error) {
+      console.error('Error while updating listing v1', error);
+    }
+
+  } catch (error) {
+    console.error('Error while updating listing v2', error);
+  }
+}
+
+// Add New Listing
+export async function addNewListing(productName, productPrice) {
+  console.log("Inside addNewListing");
+
+  const NewListing = new Parse.Object("ProductListing");
+  NewListing.set("User", Parse.User.current());
+  var userName = Parse.User.current().attributes.firstName + " " + Parse.User.current().attributes.lastName;
+  NewListing.set("SellerName", userName);
+  NewListing.set("SellerEmail", Parse.User.current().attributes.email);
+  NewListing.set("ProductName", productName);
+  NewListing.set("Price", Number(productPrice));
+
+  try {
+
+    const result = await NewListing.save();
+
+  } catch (error) {
+    console.error('Error while updating listing v2', error);
+  }
+}
+
 // Delete
 /*
 export async function deleteProductListing(objectId) {

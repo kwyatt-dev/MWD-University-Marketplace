@@ -83,6 +83,8 @@ export async function getUser(objectId){
     console.error("Error while fetching User", error);
   }
 }
+
+
 // Delete: not currently in use due to auth restrictions
 export async function deleteProductListing(objectId) {
   const query = new Parse.Query('ProductListing');
