@@ -5,8 +5,8 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
 
     return (
         <div>
-            <div class="container-fluid">
-                <div class="navbar-brand" id="custom-b">
+            <div class="container-fluid" id="custom-con-auth">
+                <div class="navbar-brand" id="custom-b-auth">
                     <img src="https://i.pinimg.com/originals/75/78/92/7578920f3e058cad83bff4f0e42f598b.png" alt="Logo of University of Notre Dame" width="30" height="24" class="d-inline-block align-text-top" />
                     &nbsp;Shop and Sell like a Champion Today
                 </div>

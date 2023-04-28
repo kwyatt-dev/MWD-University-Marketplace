@@ -9,7 +9,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 #custom-button {
   padding: 30px 32px;
   text-align: center;
@@ -47,19 +46,28 @@ code {
   color: white;
 }
 
-
 #custom-button:active {
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
 }
 
-#custom-b {
+#custom-b, #custom-b-auth{
   font-family: 'Lobster', cursive;
   transition: color 0.5s;
 }
-#custom-b:hover {
-  color: darkblue;
-  
+#custom-b, #custom-b-auth:hover {
+  color: AE9142;
+}
+
+#custom-con-auth {
+  background-color: #0C2340;
+  padding: 34px 0;
+  text-align: center;
+  font-size:x-large;
+  border: 3px solid #AE9142;
+}
+#custom-b-auth{
+    color:white;
 }
 
 .hero {
@@ -84,7 +92,7 @@ code {
 }
 
 .title:hover {
-  color: gold;
+  color: #AE9142;
 }
 .content{
   text-align: center;
@@ -113,6 +121,9 @@ code {
 
 footer {
   text-align: center;
+  background-color: #0C2340;
+  padding: 30px 0;
+  border: 3px solid #AE9142;
 }
 .footer-ul {
   display: inline-block;
@@ -134,19 +145,19 @@ footer {
 
 #footer-link {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 #footer-link:hover {
-  color: darkblue;
+  color: #AE9142;
 }
 
-.auth-title {
+.auth-title, .main-title {
   font-family: 'Lobster', cursive;
   text-align: center;
 }
 
-.form-group {
+.form-group{
   text-align: center;
   font-family: system-ui,-apple-system,system-ui,'"Helvetica Neue",Helvetica,Arial,sans-serif';
   font-size: 14px;
@@ -159,7 +170,7 @@ footer {
   width: 200px;
 }
 
-#auth-button {
+#auth-button, #reset-btn {
   font-family: system-ui,-apple-system,system-ui,'"Helvetica Neue",Helvetica,Arial,sans-serif';
   font-size: 14px;
   font-weight: 600;
@@ -167,4 +178,110 @@ footer {
 #auth-redirect {
   font-size: 12px;
   font-weight: 400;
+}
+
+.main-title {
+  padding: 34px 0;
+  background-color: #0C2340;
+  color: white;
+  border: 3px solid #AE9142;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  flex: 1;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  border: 0.5px dotted lightgray;
+}
+
+
+.prod-h4 {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.ind-list {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: lightblue;
+  border-radius: 1%;
+  padding: 5px 10px;
+  list-style-type: none;
+  list-style-position:inside;
+}
+
+.ind-list:hover {
+  background-color: lightgoldenrodyellow;
+}
+#ind-list-link {
+  text-decoration: none;
+  color:#0C2340;
+  font-weight: bold;
+  transition: all 100ms;
+}
+
+#ind-list-link:hover {
+  color:#AE9142;
+}
+
+#combo-box-demo, .prof-header, .prof-prod-l {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.prof {
+  padding: 15px 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.prof .flex-container{
+  justify-content: center;
+  align-items: center;
+}
+.prof .flex-child {
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 0px;
+}
+
+#first-name-input, #last-name-input {
+  width: 200px;
+}
+
+#prof-header {
+  padding-left: 10px;
+}
+
+#prof-photo {
+  border-radius: 10%;
+}
+
+.prof-prod {
+  padding: 20px;
+  width: fit-content;
+}
+
+.edit-list-form {
+  padding: 20px;
+  text-align: center;
+}
+
+.prof-prod-l {
+  padding: 0px 0px;
+  list-style-type: none;
+  list-style-position:inside;
+}
+
+.prof-listing-item {
+  background-color: lightblue;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 1%;
+  transition: all 200ms;
+  width: 500px;
+}
+.prof-listing-item:hover {
+  background-color: lightpink;
 }

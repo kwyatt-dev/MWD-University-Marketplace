@@ -46,14 +46,16 @@ export default function ProductListingsListItem(props){
     // }, []);
 
     return (
-        <div>
+        <div className="prof-listing-item">
             Product Name: {props.productName}
             <br></br>
             Price: {props.price}
+            <br />
             {props.curUser && (
-            <button onClick={editListing}>Edit</button>)}
+            <button class="btn btn-primary" id="auth-button" onClick={editListing}>Edit</button>)}
+            &nbsp;
             {props.curUser && (
-            <button onClick={deleteListing}>Delete</button>
+            <button class="btn btn-primary" id="auth-button" onClick={deleteListing}>Delete</button>
             )}
         </div>
     )
