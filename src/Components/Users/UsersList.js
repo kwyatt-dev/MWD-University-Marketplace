@@ -15,6 +15,7 @@ const UsersList = () => {
 
   return (
     <div>
+      TODO: clean up the user object
       {users.length > 0 && (
         <ul className="user-list">
           {/* Passing listing info as props */}

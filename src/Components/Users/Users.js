@@ -6,7 +6,7 @@ const UsersModule = () => {
   return (
     <div>
       <div className="main-title">
-      <h1> Current Users</h1>
+      <h1>Current Users</h1>
       </div>
       <UsersList />
     </div>
