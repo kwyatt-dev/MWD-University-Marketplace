@@ -1,6 +1,7 @@
 import Parse from "parse/dist/parse.min.js";
 // used in auth register component
 export const createUser = (newUser) => {
+    // creating a user
     const user = new Parse.User();
 
     user.set("username", newUser.email);
@@ -10,15 +11,27 @@ export const createUser = (newUser) => {
     user.set("email", newUser.email);
 
     console.log("User: ", user);
+
+    // creating a corresponding profile
+    const profile = new Parse.Object('Profile');
+    profile.set('User', user);
+    profile.set('FirstName', newUser.firstName);
+    profile.set('LastName', newUser.lastName);
+    profile.set('Email', newUser.email);
+    
+    console.log("Profile: ", profile);
+
     return user
         .signUp()
         .then((newUserSaved) => {
+            // create a corresponding profile
+            profile.save();
             Parse.User.logOut();
             alert(`${newUser.firstName}, you successfully registered! Please check your inbox to verify your e-mail and log in afterwards.`)
             return newUserSaved;
         })
         .catch((error) => {
-            alert(`Error: ${error.message}`);
+            alert(`User Creating Error: ${error.message}`);
         });
 };
 
@@ -30,9 +43,10 @@ export const loginUser = (currUser) => {
     user.set("username", currUser.email);
 
     console.log("User: ", user);
-    console.log();
+    
     return user
         .logIn(user.email, user.password)
+        // check if verified
         .then((currUserSaved) => {
             if (user.get('emailVerified')) {
                 return currUserSaved;
@@ -54,7 +68,7 @@ export const checkUser = () => {
 export const checkNd = (email) => {
     let re = /^[ ]*([^@\s]+)@nd.edu/;
     if (!re.test(email)) {
-        alert(`Please use an ND email`);
+        alert(`Please use your Notre Dame email to register.`);
         return false;
     } else {
         return true;
