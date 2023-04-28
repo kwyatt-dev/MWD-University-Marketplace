@@ -5,16 +5,13 @@ const Footer = () => (
     <nav>
       <ul class="footer-ul">
         <li>
-          <Link to="/" id="footer-link">Home</Link>
+          <Link to="/" id="footer-link">Market</Link>
         </li>
         <li>
           <Link to="/users" id="footer-link">Users</Link>
         </li>
         <li>
-          <Link to="/profile" id="footer-link">Profile</Link>
-        </li>
-        <li>
-          <Link to="/profile/awong2@nd.edu" id="footer-link">Ava Profile</Link>
+          <Link to="/profile" id="footer-link">Home</Link>
         </li>
       </ul>
     </nav>

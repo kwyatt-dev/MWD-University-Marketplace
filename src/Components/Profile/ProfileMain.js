@@ -11,7 +11,7 @@ const ProfileMain = () => {
   const { email } = useParams();
 
   // If there is not an email param or profile is current user
-  if (!email || (email == Parse.User.current().attributes.email)) {
+  if (!email || (email === Parse.User.current().attributes.email)) {
     // Profile is current details
     var current = true;
     var userEmail = Parse.User.current().attributes.email;
@@ -23,10 +23,14 @@ const ProfileMain = () => {
   }
 
   return (
-    <div>
-      <h1>Profile Page</h1>
-      <ProfileHeader curUser={current} email={userEmail} />
-      <ProfileProducts curUser={current} email={userEmail} />
+    <div className="profile">
+      <div class="main-title">
+      <h1>Marketplace Profile</h1>
+      </div>
+      <div class="flex-container">
+      <ProfileHeader class="flex-child" curUser={current} email={userEmail} />
+      <ProfileProducts class="flex-child" curUser={current} email={userEmail} />
+      </div>
     </div>
   );
 };

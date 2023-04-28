@@ -2,15 +2,9 @@ import React, { useEffect, useState } from "react";
 import {getAllUsers} from "../../Services/UserService.js";
 import UsersListItem from "./UsersListItem.js";
 
-var postCheck = false;
-
 const UsersList = () => {
   const [users, setListings] = useState([]);
 
-  if (!postCheck) {
-    //createUser(1, "John", "Mayer", "jmayer@gmail.com", "wonderland");
-    //postCheck = true;
-  }
 
   useEffect(() => {
     getAllUsers().then((users) => {
@@ -21,9 +15,8 @@ const UsersList = () => {
 
   return (
     <div>
-        Active Users:
       {users.length > 0 && (
-        <ul>
+        <ul className="user-list">
           {/* Passing listing info as props */}
           {users.map((user) => (
             <li key={user.attributes.username}>

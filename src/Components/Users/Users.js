@@ -5,7 +5,9 @@ import UsersList from "./UsersList";
 const UsersModule = () => {
   return (
     <div>
-      <h1> Feature-4 Kickoff Ancient Japan Dropouts </h1>
+      <div className="main-title">
+      <h1> Current Users</h1>
+      </div>
       <UsersList />
     </div>
   );

@@ -4,7 +4,9 @@ import ProductListingsList from "./ProductListingsList";
 const ProductListingsModule = () => {
   return (
     <div>
-      <h1> Secondhand Marketplace </h1>
+      <div class="main-title">
+        <h1>Tri-Campus Secondhand Marketplace</h1>
+      </div>
       <ProductListingsList />
     </div>
   );

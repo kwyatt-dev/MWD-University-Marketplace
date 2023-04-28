@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { addNewListing, getProductByID, updateProductByID } from "../../Services/ProfileProductListingService";
 import { useNavigate } from "react-router-dom";
@@ -17,8 +17,10 @@ const AddNewListing = () => {
 
     return (
         <div>
-            <h1>Edit Listing</h1>
-            
+            <div class="main-title">
+                <h1>New Goods...</h1>
+            </div>
+            <div class="edit-list-form">
                 <form id="editListingForm">
                     <div className="form-group">
                         <label>Product Name</label>
@@ -42,11 +44,12 @@ const AddNewListing = () => {
                             required
                         />
                     </div>
+                    <br/>
                     <div>
-                        <button onClick={addListing}>Add New Listing</button>
+                        <button class="btn btn-primary" id="auth-button" onClick={addListing}>Add New Listing</button>
                     </div>
                 </form>
-            
+            </div>
         </div>
     );
 };

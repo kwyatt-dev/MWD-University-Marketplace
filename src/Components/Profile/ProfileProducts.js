@@ -29,19 +29,20 @@ const ProfileProducts = (props) => {
     }
   
     return (
-      <div>
+      <div class="prof-prod">
         <div>
         {props.curUser && (
-          <button onClick={addListing}>Add New Listing</button>
+          <button class="btn btn-primary" id="auth-button" onClick={addListing}>Add New Listing</button>
         )}
         </div>
+        <br/>
         <div>
           {profileProducts.length > 0 && (
-            <ul>
+            <ul class="prof-prod-l">
               {/*Passing listing info as props*/}
               {profileProducts.map((productListing) => (
                 <li key={productListing.id}>
-                  <ProductListingsListItem 
+                  <ProductListingsListItem
                     objectId={productListing.id}
                     productName={productListing.attributes.ProductName}
                     sellerEmail={productListing.attributes.SellerEmail}
@@ -53,7 +54,6 @@ const ProfileProducts = (props) => {
               ))}
             </ul>
           )}
-          <hr />
         </div>
       </div>
     ); 
