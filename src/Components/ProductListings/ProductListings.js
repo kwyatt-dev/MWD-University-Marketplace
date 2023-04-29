@@ -1,6 +1,7 @@
 import React from "react";
 import ProductListingsList from "./ProductListingsList";
 
+// Top-level marketplace page
 const ProductListingsModule = () => {
   return (
     <div>

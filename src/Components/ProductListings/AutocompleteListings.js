@@ -5,7 +5,7 @@ export default function AutocompleteListings(currListings) {
 
 
     const options = [];
-    // listing & seller options
+    // list all listing & seller options
     for (let i = 0; i < currListings.currListings.length; i++) {
         options.push(
             {
@@ -15,13 +15,14 @@ export default function AutocompleteListings(currListings) {
         );
     }
 
+    // listen to itemList changes 
     const [itemList, setItemList] = useState(options);
     const [itemSelected, setItemSelected] = useState([]);
 
     const handleChange = () => (event, value) => {
         setItemSelected(value);
     }
-    // console.log(itemSelected[0].name);
+
     return (
         <div>
             <Autocomplete
@@ -41,6 +42,7 @@ export default function AutocompleteListings(currListings) {
             />
             {itemSelected.length > 0 && (
                 <div>
+                    {/* pass selected items to display in a separate list */}
                     <ul class="list-group list-group-flush">
                         {itemSelected.map((itemFiltered) => (
                             <li key={itemFiltered.attributes.attributes.SellerEmail} class="list-group-item">

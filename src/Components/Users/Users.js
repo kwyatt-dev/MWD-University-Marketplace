@@ -1,7 +1,8 @@
 import React from "react";
 import UsersList from "./UsersList";
 
-// This Component should only be visible to admins. Users may sign up/log in using another component in the future.
+// The cleanup of this component will be done after feature 6 wraps up.
+
 const UsersModule = () => {
   return (
     <div>

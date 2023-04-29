@@ -7,6 +7,7 @@ import "../../index.css";
 const ProductListingsList = () => {
   const [productListings, setListings] = useState([]);
 
+  // Get all product data
   useEffect(() => {
     getAllProductListings().then((productListings) => {
       setListings(productListings);

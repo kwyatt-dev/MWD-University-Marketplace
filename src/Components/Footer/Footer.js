@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../../index.css";
 const Footer = () => (
+  // This is the footer component
   <footer>
     <nav>
       <ul class="footer-ul">

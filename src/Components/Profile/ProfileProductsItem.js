@@ -18,8 +18,6 @@ export default function ProductListingsListItem(props){
         navigate("/editListing/" + props.objectId);
     }
 
-    
-
     // getUser usage
     //const [user, setUser] = useState([]);
     //const [isLoading, setIsLoading] = useState(true);
@@ -45,6 +43,7 @@ export default function ProductListingsListItem(props){
     //     });
     // }, []);
 
+    // This is the individual listing on a user's profile page
     return (
         <div className="prof-listing-item">
             Product Name: {props.productName}

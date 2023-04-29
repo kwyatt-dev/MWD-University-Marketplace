@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import Parse from "parse/dist/parse.min.js";
 import { useNavigate } from "react-router-dom";
 
-//profileID = "testing";
 
 // List of Profile's Products
 const ProfileProducts = (props) => {

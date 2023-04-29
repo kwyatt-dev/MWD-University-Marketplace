@@ -5,8 +5,6 @@ import { getUser } from "../../Services/UserService.js";
 
 export default function ProductListingsListItem(props){
 
-    // Display props: 
-    //console.log(props.user.id);
 
     // getUser usage
     const [user, setUser] = useState([]);
@@ -21,6 +19,7 @@ export default function ProductListingsListItem(props){
         });
     }, []);
 
+    // component to display individual listing
     return (
         <div>
             {!isLoading && (

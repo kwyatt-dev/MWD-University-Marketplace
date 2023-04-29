@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProductByID, updateProductByID } from "../../Services/ProfileProductListingService";
 import { useNavigate } from "react-router-dom";
@@ -14,11 +14,11 @@ const EditListing = () => {
         console.log("INSIDE UPDATE LISTING");
         //console.log(document.getElementById("editListingForm").elements[0].value);
         var name = document.getElementById("editListingForm").elements[0].value;
-        if (name == "") {
+        if (name === "") {
             name = document.getElementById("editListingForm").elements[0].placeholder;
         }
         var price = document.getElementById("editListingForm").elements[1].value;
-        if (price == "") {
+        if (price === "") {
             price = document.getElementById("editListingForm").elements[1].placeholder;
         }
         console.log(price);
@@ -28,43 +28,49 @@ const EditListing = () => {
 
     useEffect(() => {
         getProductByID(productID).then((details) => {
-          setDetails(details);
+            setDetails(details);
         });
-        
+
     }, [productID]);
 
 
+    // Form to edit an existing listing.
     return (
         <div>
-            <h1>Edit Listing</h1>
+            <div class="main-title">
+                <h1>Edit Listing</h1>
+            </div>
             {productDetails.length > 0 && (
-                <form id="editListingForm">
-                    <div className="form-group">
-                        <label>Product Name</label>
+                <div class="edit-list-form">
+                    <form id="editListingForm">
+                        <div className="form-group">
+                            <label>Product Name</label>
+                            <br />
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="product-name-input"
+                                name="productName"
+                                placeholder={productDetails[0].attributes.ProductName}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Price</label>
+                            <br />
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="price-input"
+                                name="price"
+                                placeholder={productDetails[0].attributes.Price}
+                            />
+                        </div>
                         <br />
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="product-name-input"
-                            name="productName"
-                            placeholder={productDetails[0].attributes.ProductName}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Price</label>
-                        <br />
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="price-input"
-                            name="price"
-                            placeholder={productDetails[0].attributes.Price}
-                        />
-                    </div>
-                    <div>
-                        <button onClick={updateListing}>Update Listing</button>
-                    </div>
-                </form>
+                        <div>
+                            <button class="btn btn-primary" id="auth-button" onClick={updateListing}>Update Listing</button>
+                        </div>
+                    </form>
+                </div>
             )}
         </div>
     );

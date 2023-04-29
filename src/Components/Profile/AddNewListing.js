@@ -14,11 +14,11 @@ const AddNewListing = () => {
         navigate("/profile");
     }
 
-
+    // form to edit a listing
     return (
         <div>
             <div class="main-title">
-                <h1>New Goods...</h1>
+                <h1>Add New Listing</h1>
             </div>
             <div class="edit-list-form">
                 <form id="editListingForm">

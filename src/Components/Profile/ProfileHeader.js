@@ -20,6 +20,7 @@ const ProfileHeader = (props) => {
   }, [props.email]);
 
 
+  // userEffect to update name, payment, and dorm
   useEffect(() => {
     if (updateFlag) {
       var first = profileDetails[0].attributes.FirstName;
@@ -79,6 +80,7 @@ const ProfileHeader = (props) => {
   }
 
 
+  // edittable profile fields 
   return (
     <div className="prof">
       {profileDetails.length > 0 && (
