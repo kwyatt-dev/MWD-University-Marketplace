@@ -3,10 +3,10 @@
 This web application allows for the easy and secure exchange of goods and services between students of the tri-campus community. It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It uses [back4app](https://github.com/back4app) as the database and its Parse JS library. 
 
 ## Features 04/29/2023
-- Email-Verified Login
-- Standardization of Information Sharing
-- Individually Customizable Profile Pages
-- Search Functionality
+- Email-verified login
+- Standardization of information sharing
+- Individually customizable profile pages
+- Search functionality
 
 ## Installation
 - To run the project locally, run `git clone https://github.com/kwyatt-dev/MWD-University-Marketplace.git`.
@@ -18,6 +18,7 @@ This web application allows for the easy and secure exchange of goods and servic
 
 ## Next Steps
 - Update the appearance of the product list
+- Feature to add profile pictures
 - Update the appearance of the user list
 - Clean up the backend
 - There are currently inconsistencies/duplicate records for certain values
