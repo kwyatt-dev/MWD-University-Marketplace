@@ -53,12 +53,13 @@ All notable changes to this project will be documented in this file.
 ### Added
   - [MWD-University-Marketplace] Profile Pages, Email Authentication<br />
     Profile pages, including profile product listings, are added to support adding new listings under a user profile and visiting other users' user profiles. Email authentication is further secured with email verification, parsing to confirm that the domain name is nd.edu, and password reset functions. 
-    
    
 ### Changed
   - [MWD-University-Marketplace] CSS for Homepage Updated<br />
   Improve the aesthetics of the website
     
+### Fixed
+
 ## [1.0.0] - 04-29-2023
  
 ### Added
@@ -68,6 +69,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
   - [MWD-University-Marketplace] CSS for Profile and Product Pages, Codebase cleaned up<br />
     Improve the aesthetics of the website, adding meaningful comments
-    
+     
+### Fixed
 
 
