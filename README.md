@@ -8,6 +8,11 @@ This web application allows for the easy and secure exchange of goods and servic
 - Individually customizable profile pages
 - Search functionality
 
+## Feature 6 Submission
+- Student A: CSS, email verification/password reset, autocomplete
+To check email verification/password reset functionalities, go to F6-EmailVerification.gif and F6-ForgetPassword.gif. 
+- Student B: add/edit profile, add/edit product listings
+
 ## Installation
 - To run the project locally, run `git clone https://github.com/kwyatt-dev/MWD-University-Marketplace.git`.
 - In the project directory, run `npm start` to run this app in development mode. Open http://localhost:3000 to view it in your browser.
