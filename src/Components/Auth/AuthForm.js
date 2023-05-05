@@ -15,6 +15,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
             <form onSubmit={onSubmit} autoComplete="off">
                 {!isLogin ?
                     <div className="auth-title">
+                        {/* Register form */}
                         <h2>Create an Account</h2>
                         <br />
                     </div>
@@ -57,6 +58,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
                 : <></>}
                 <div>
                     <div className="form-group">
+                        {/* Login & Register Forms */}
                         <label for="exampleInputEmail1" class="form-label">Email/Username</label>
                         <br />
                         <input
@@ -91,7 +93,8 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
                         <button type="submit" className="btn btn-primary" id="auth-button" onSubmit={onSubmit}>
                             Submit
                         </button>
-                        {!isLogin ? <div id="auth-redirect"><Link to="/auth/login">Already have an account?</Link></div> : <div id="auth-redirect"><Link to={`/auth/reset/${user.email}`}>Forgot your password?</Link></div>}
+                        {/* Verification section */}
+                        {!isLogin ? <div id="auth-redirect"><Link to="/auth/login">Already have an account?</Link></div> : <div id="auth-redirect"><Link to={`/auth/reset/${user.email}`}>Forget your password?</Link></div>}
                         <br></br>
                     </div>
                 </div>
