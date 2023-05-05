@@ -10,6 +10,7 @@ This web application allows for the easy and secure exchange of goods and servic
 
 ## Feature 6 Submission
 - Student A: CSS, email verification/password reset, autocomplete
+
 To check email verification/password reset functionalities, go to F6-EmailVerification.gif and F6-ForgetPassword.gif. 
 - Student B: add/edit profile, add/edit product listings
 
