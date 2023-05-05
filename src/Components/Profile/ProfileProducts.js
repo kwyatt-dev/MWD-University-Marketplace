@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
-import {addNewListing, getProductListingsByEmail} from "../../Services/ProfileProductListingService";
+import {getProductListingsByEmail} from "../../Services/ProfileProductListingService";
 import ProductListingsListItem from "./ProfileProductsItem";
-import { useParams } from "react-router-dom";
-import Parse from "parse/dist/parse.min.js";
 import { useNavigate } from "react-router-dom";
 
 
@@ -22,11 +20,11 @@ const ProfileProducts = (props) => {
       
     }, [props.email, profileProducts.length]);
 
-    // TODO: add Add Product Listing button
     const addListing = () => {
       navigate("/newListing");
     }
   
+    // This is the list of products on the profile's page
     return (
       <div class="prof-prod">
         <div>

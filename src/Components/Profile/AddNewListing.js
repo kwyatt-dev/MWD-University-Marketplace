@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { addNewListing, getProductByID, updateProductByID } from "../../Services/ProfileProductListingService";
+import React from "react";
+import { addNewListing } from "../../Services/ProfileProductListingService";
 import { useNavigate } from "react-router-dom";
+
 
 const AddNewListing = () => {
 
@@ -10,11 +10,11 @@ const AddNewListing = () => {
     const addListing = () => {
         var name = document.getElementById("editListingForm").elements[0].value;
         var price = document.getElementById("editListingForm").elements[1].value;
-        addNewListing(name, price);
+        addNewListing(name, price);     // service to add new listing
         navigate("/profile");
     }
 
-    // form to edit a listing
+    // form to add a listing
     return (
         <div>
             <div class="main-title">

@@ -14,6 +14,7 @@ const ProductListingsList = () => {
     });
   }, []);
 
+  // component to display list of products
   return (
     <div>
 

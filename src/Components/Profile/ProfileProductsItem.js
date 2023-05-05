@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import {deleteProductListing} from "../../Services/ProductListingService.js";
-import { getUser } from "../../Services/UserService.js";
 import { useNavigate } from "react-router-dom";
 
 
@@ -8,8 +7,6 @@ export default function ProductListingsListItem(props){
 
     const navigate = useNavigate();
 
-    // Display props: 
-    //console.log(props.user.id);
     const deleteListing = () =>{
         deleteProductListing(props.objectId);
     }
@@ -17,31 +14,6 @@ export default function ProductListingsListItem(props){
     const editListing = () =>{
         navigate("/editListing/" + props.objectId);
     }
-
-    // getUser usage
-    //const [user, setUser] = useState([]);
-    //const [isLoading, setIsLoading] = useState(true);
-
-
-    //useEffect(() => {
-        // TODO: get user by ID   
-        //if (props.user.id) {
-        //    getUser("wXpvn9DHoR").then((user) => {
-          //      setUser(user);
-      //          console.log("User Attr: ", user.attributes);
-    //            console.log("User Name: ", user.attributes.username);
-  //          });
-        //}
-//}, []);
-
-    // useEffect(() => {
-    //     getUser("wXpvn9DHoR").then((user) => {
-    //         setUser(user);
-    //         console.log("User Attr: ", user.attributes);
-    //         console.log("User Name: ", user.attributes.username); // <- interesting that this works but line 39 breaks
-    //         setIsLoading(false);
-    //     });
-    // }, []);
 
     // This is the individual listing on a user's profile page
     return (

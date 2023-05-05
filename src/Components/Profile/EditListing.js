@@ -5,14 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 const EditListing = () => {
 
-    const { productID } = useParams();
+    const { productID } = useParams();      // get productID from URL
 
     const [productDetails, setDetails] = useState([]);
 
     const navigate = useNavigate();
     const updateListing = () => {
-        console.log("INSIDE UPDATE LISTING");
-        //console.log(document.getElementById("editListingForm").elements[0].value);
         var name = document.getElementById("editListingForm").elements[0].value;
         if (name === "") {
             name = document.getElementById("editListingForm").elements[0].placeholder;
@@ -22,7 +20,7 @@ const EditListing = () => {
             price = document.getElementById("editListingForm").elements[1].placeholder;
         }
         console.log(price);
-        updateProductByID(productID, name, price);
+        updateProductByID(productID, name, price);      // service to update the product by its ID
         navigate("/profile");
     }
 

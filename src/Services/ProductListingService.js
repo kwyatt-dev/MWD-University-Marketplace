@@ -1,4 +1,3 @@
-// import React from "react";
 import Parse from "parse/dist/parse.min.js";
 
 // const url =
@@ -15,7 +14,6 @@ export async function getAllProductListings() {
     console.log("Results: ", results);
     return results;
 
-    //return listingsArray;
   } catch (error) {
     console.error("Error while fetching ProductListing", error);
   }

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { getProfileByCurrentUser, getProfileByEmail, updateCurrentProfile } from "../../Services/ProfileUserService";
+import { getProfileByEmail, updateCurrentProfile } from "../../Services/ProfileUserService";
 import profilePhoto from "./BlankProfilePhoto.png";
 import "../../index.css";
 
 // Profile's Header
 const ProfileHeader = (props) => {
+
+  // Initialize Variable for Profile and Editing (in the case that user is current)
   const [profileDetails, setDetails] = useState([]);
   const [editNameFlag, setEditNameFlag] = useState(false);
   const [editPaymentFlag, setEditPaymentFlag] = useState(false);
@@ -20,9 +22,10 @@ const ProfileHeader = (props) => {
   }, [props.email]);
 
 
-  // userEffect to update name, payment, and dorm
+  // useEffect to update name, payment, and dorm if editable
   useEffect(() => {
     if (updateFlag) {
+
       var first = profileDetails[0].attributes.FirstName;
       if (document.getElementById("first-name-input")) {
         first = document.getElementById("first-name-input").value;
@@ -31,6 +34,7 @@ const ProfileHeader = (props) => {
           first = document.getElementById("first-name-input").placeholder;
         }
       }
+
       var last = profileDetails[0].attributes.LastName;
       if (document.getElementById("last-name-input")) {
         last = document.getElementById("last-name-input").value;
@@ -57,7 +61,7 @@ const ProfileHeader = (props) => {
         }
       }
 
-
+      // Call service to update profile
       updateCurrentProfile(profileDetails[0].attributes.Email, first, last, dorm, payment).then(() => {
         getProfileByEmail(props.email).then((details) => {
           setDetails(details);
@@ -80,7 +84,10 @@ const ProfileHeader = (props) => {
   }
 
 
-  // edittable profile fields 
+  // edittable profile fields
+  // If user not current: Only data will be shown
+  // If user is current: they will see buttons that allow editing
+  // If buttons are clicked: they will see fields that allow them to edit
   return (
     <div className="prof">
       {profileDetails.length > 0 && (

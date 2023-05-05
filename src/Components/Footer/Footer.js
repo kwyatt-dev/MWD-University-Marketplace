@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../../index.css";
 const Footer = () => (
-  // This is the footer component
+  // This is the footer component - has links to other main pages
   <footer>
     <nav>
       <ul class="footer-ul">

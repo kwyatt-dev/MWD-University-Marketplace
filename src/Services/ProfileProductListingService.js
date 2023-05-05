@@ -7,9 +7,6 @@ import Parse from "parse/dist/parse.min.js";
 // Get All Product Listings
 export async function getProductListingsByEmail(userEmail) {
 
-    // TODO: ADJUST FOR ONLY PROFILE 
-
-
   const ProductListing = Parse.Object.extend("ProductListing");
   const query = new Parse.Query(ProductListing);
   query.equalTo("SellerEmail", userEmail);
@@ -20,7 +17,6 @@ export async function getProductListingsByEmail(userEmail) {
     console.log("Results Profile Product: ", results);
     return results;
 
-    //return listingsArray;
   } catch (error) {
     console.error("Error while fetching ProfileProductList", error);
   }
@@ -84,21 +80,3 @@ export async function addNewListing(productName, productPrice) {
     console.error('Error while updating listing v2', error);
   }
 }
-
-// Delete
-/*
-export async function deleteProductListing(objectId) {
-  const query = new Parse.Query('ProductListing');
-  try {
-    // here you put the objectId that you want to delete
-    const object = await query.get(objectId);
-    try {
-      const response = await object.destroy();
-      console.log('Deleted ParseObject', response);
-    } catch (error) {
-      console.error('Error while deleting ParseObject', error);
-    }
-  } catch (error) {
-    console.error('Error while retrieving ParseObject', error);
-  }
-}*/
