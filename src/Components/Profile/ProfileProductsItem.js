@@ -18,31 +18,6 @@ export default function ProductListingsListItem(props){
         navigate("/editListing/" + props.objectId);
     }
 
-    // getUser usage
-    //const [user, setUser] = useState([]);
-    //const [isLoading, setIsLoading] = useState(true);
-
-
-    //useEffect(() => {
-        // TODO: get user by ID   
-        //if (props.user.id) {
-        //    getUser("wXpvn9DHoR").then((user) => {
-          //      setUser(user);
-      //          console.log("User Attr: ", user.attributes);
-    //            console.log("User Name: ", user.attributes.username);
-  //          });
-        //}
-//}, []);
-
-    // useEffect(() => {
-    //     getUser("wXpvn9DHoR").then((user) => {
-    //         setUser(user);
-    //         console.log("User Attr: ", user.attributes);
-    //         console.log("User Name: ", user.attributes.username); // <- interesting that this works but line 39 breaks
-    //         setIsLoading(false);
-    //     });
-    // }, []);
-
     // This is the individual listing on a user's profile page
     return (
         <div className="prof-listing-item">
